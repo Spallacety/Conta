@@ -14,10 +14,10 @@ public class AtualizadorDeContas {
 	public void roda(Conta c) {
 		
 		double temp;
-		System.out.println("Saldo anterior: R$ "+c.getSaldo());
+		System.out.printf("Saldo anterior: R$ %.2f\n", c.getSaldo());
 		c.atualiza(selic);
 		temp = c.getSaldo();
-		System.out.println("Saldo atual: R$ "+ temp);
+		System.out.printf("Saldo atual: R$ %.2f\n", temp);
 		saldoTotal += temp;
 	}
 	

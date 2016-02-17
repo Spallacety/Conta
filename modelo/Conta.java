@@ -1,15 +1,17 @@
 package br.edu.ifpi.banco.modelo;
 
-public class Conta {
+public abstract class Conta{
 	
 	protected double saldo;
 	
-	public void atualiza(double taxa){
-		this.saldo += this.saldo * taxa;
-	}
+	public abstract void atualiza(double taxa);
 	
 	public void deposita(double valor){
-		this.saldo += valor;
+		if (valor < 0){
+			throw new ValorInvalidoException(valor);
+		} else {
+			this.saldo += valor;
+		}
 	}
 	
 	public void saca(double valor){
